@@ -4,16 +4,22 @@
   AFFICHE LES ZONES DYNAMIQUES
  */
  ?>
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>Template</h1>
-    <?php var_dump($connexion); ?>
-  </body>
-</html>
+ <!doctype html>
+ <html class="no-js" lang="zxx">
+ <head>
+   <?php include '../app/vues/template/partials/_head.php';?>
+ </head>
+ <body>
+
+ <?php include '../app/vues/template/partials/_preloader.php'; ?>
+
+ <?php include '../app/vues/template/partials/_header.php'; ?>
+
+ <?php include '../app/vues/template/partials/_main.php'; ?>
+
+ <?php include '../app/vues/template/partials/_footer.php'; ?>
+
+ <?php include '../app/vues/template/partials/_scripts.php'; ?>
+
+ </body>
+ </html>
