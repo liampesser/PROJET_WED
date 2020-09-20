@@ -8,7 +8,7 @@
   $content = '';
   $title = '';
 
- // PARAMETRES DE CONNEXION
+ // PARAMETRES DE CONNEXION A LA DB
   define('HOSTNAME', 'localhost');
   define('DBNAME', 'wed_project');
   define('USERNAME', 'root');
