@@ -6,6 +6,7 @@
 namespace App\Controleurs\PostsControleur;
 use \App\Modeles\PostsModele;
 
+// INDEXACTION
 /**
  * [indexAction description]
  * @param  PDO    $connexion [description]
@@ -13,8 +14,8 @@ use \App\Modeles\PostsModele;
  */
 function indexAction (\PDO $connexion) {
   // Je mets dans $posts la liste des 10 derniers posts que je demande au modèle
-    include_once '../app/modeles/postsModele.php';
-    $posts = PostsModele\findAll($connexion);
+  include_once '../app/modeles/postsModele.php';
+  $posts = PostsModele\findAll($connexion);
 
   // Je charge la vue posts/index dans $content
   GLOBAL $title, $content;

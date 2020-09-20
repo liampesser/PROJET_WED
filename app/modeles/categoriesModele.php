@@ -1,9 +1,9 @@
 <?php
 /*
-  .app/modeles/tagsModele.php
+  .app/modeles/categoriesModele.php
 */
 
-namespace App\Modeles\PostsModele;
+namespace App\Modeles\CategoriesModele;
 
 /**
  * [findAll description]
@@ -12,9 +12,8 @@ namespace App\Modeles\PostsModele;
  */
 function findAll (\PDO $connexion) :array {
   $sql = "SELECT *
-          FROM posts
-          ORDER BY created_at DESC
-          LIMIT 5;";
+          FROM categories
+          ORDER BY name ASC;";
   $rs = $connexion->query($sql);
   return $rs->fetchAll(\PDO::FETCH_ASSOC);
 }
