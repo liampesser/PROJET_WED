@@ -17,7 +17,7 @@ namespace App\Modeles\TagsModele;
           WHERE pht.post_id = :postId
           ORDER BY t.name ASC;";
   $rs = $connexion->prepare($sql);
-  $rs-> bindValue(':postId', $postId, \PDO::PARAM_INT);
+  $rs->bindValue(':postId', $postId, \PDO::PARAM_INT);
   $rs->execute();
   return $rs->fetchAll(\PDO::FETCH_ASSOC);
 }
