@@ -17,11 +17,11 @@
      <article class="blog_item">
          <div class="blog_item_img">
              <img class="card-img rounded-0" src='../www/assets/img/blog/<?php echo $post['image']; ?>' alt="">
-<<<<<<< HEAD
-             <a href="?postId=<?php echo $post['id']; ?>" class="blog_item_date">
-=======
+
              <a href="#" class="blog_item_date">
->>>>>>> main
+
+             <a href="#" class="blog_item_date">
+
                  <h3><?php echo date('d', $created_at); ?></h3>
                  <p><?php echo date('M', $created_at); ?></p>
              </a>
@@ -35,6 +35,7 @@
              <!--TAGS LIST -->
              <?php
                include_once '../app/controleurs/tagsControleur.php';
+               \App\Controleurs\TagsControleur\indexByPostIdAction($connexion, $post['id']);
              ?>
          </div>
      </article>

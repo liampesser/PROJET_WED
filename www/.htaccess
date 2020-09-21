@@ -8,6 +8,14 @@ Options +FollowSymlinks
 # Activation du module de réécriture d'URL :
 RewriteEngine on
 
+#---------------------------------------------------
+# Règles de réécriture d'URL :
+#---------------------------------------------------
+#DETAILS D'UN POST
+#PATTERN: posts/id-slug.html
+#URL: index.php?postId=x
+rewriteRule ^posts\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*)$ index.php?postId=$1
+
 # --------------------------------------------------
 RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
 RewriteRule ^(.*)$ index.php [L]
