@@ -18,4 +18,6 @@
          <?php echo $post['content']; ?>
        </div>
     </div>
+  <!-- AUTHOR DETAILS -->
+  <?php include '../app/vues/authors/show.php'; ?>
  </div>
