@@ -8,7 +8,7 @@
 
  <div class="blog-author">
     <div class="media align-items-center">
-       <img src='../www/assets/img/blog/<?php echo $author['avatar']; ?>' alt="">
+       <img src='assets/img/blog/<?php echo $author['avatar']; ?>' alt="">
        <div class="media-body">
           <a href="#">
              <h4><?php echo $author['firstname']; ?> <?php echo $author['lastname']; ?></h4>
