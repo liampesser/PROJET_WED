@@ -8,5 +8,8 @@
 </head>
 <body>
   <h1>Ceci est le backoffice</h1>
+  <div class="">
+    <a href="user/logout">Se déconnecter</a>
+  </div>
 </body>
 </html>

@@ -7,10 +7,14 @@
   use \App\Modeles\UsersModele;
 
 function loginFormAction() {
+  if(isset($_SESSION['user'])):
+    header('location: ' . BASE_URL_ADMIN);
+  endif;
+
   GLOBAL $content;
   ob_start();
     include '../app/vues/users/loginForm.php';
-  $content = ob_get_clean();
+    $content = ob_get_clean();
 }
 
 function loginCheckAction(\PDO $connexion) {
@@ -18,6 +22,8 @@ function loginCheckAction(\PDO $connexion) {
   include '../app/modeles/usersModele.php';
   $user = UsersModele\findOneByLoginPassword($connexion, $_POST['login'], $_POST['password']);
   if ($user) {
+    // On donne un badge à l'utilisateur (traçage)
+    $_SESSION['user'] = $user;
     header('location: ' . BASE_URL_ADMIN);
   }
   else {
