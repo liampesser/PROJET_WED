@@ -12,9 +12,9 @@ RewriteEngine on
 #ROUTES
 #---------------------------------------------------
 
-  // DECONNEXION DU USER
-  // PATTERN: user/logout
-  // VERS: index.php?user=logout
+  # DECONNEXION DU USER
+  # PATTERN: user/logout
+  # VERS: index.php?user=logout
   RewriteRule ^user\/logout$ index.php?user=logout [L]
 
 # --------------------------------------------------
