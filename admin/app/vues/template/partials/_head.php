@@ -29,6 +29,7 @@
 
 <!-- Custom styles for this template -->
 <link href="theme.css" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
 
 <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
 <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->

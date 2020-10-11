@@ -8,14 +8,50 @@ Options +FollowSymlinks
 # Activation du module de réécriture d'URL :
 RewriteEngine on
 
-#---------------------------------------------------
-#ROUTES
-#---------------------------------------------------
+#--------------------------------------------------
+# ROUTES
+#--------------------------------------------------
 
+# -------------------------------
+# ROUTES DES CATEGORIES
+# -------------------------------
+  # LISTE DES CATEGORIES
+  # PATTERN: categories
+  # VERS: index.php?categories=index
+  RewriteRule ^categories$ index.php?categories=index [L]
+
+  # AJOUT CATEGORIE: FORMULAIRE
+  # PATTERN: categories/add/form
+  # VERS: index.php?categories=addForm
+  RewriteRule ^categories\/add\/form$ index.php?categories=addForm [L]
+
+  # AJOUT CATEGORIES: INSERT
+  # PATTERN: categories/add/insert
+  # VERS: index.php?categories=add
+  RewriteRule ^categories\/add\/insert$ index.php?categories=add [L]
+
+  # SUPPRESSION CATEGORIES
+  # PATTERN: categories/delete/x
+  # VERS: index.php?categories=delete&id=x
+  RewriteRule ^categories\/delete\/([1-9][0-9]*)$ index.php?categories=delete&id=$1 [L]
+
+  # MODIFICATION D'UNE CATEGORIE : FORMULAIRE
+  # PATTERN: categories/edit/form/x
+  # VERS: index.php?categories=editForm&id=x
+  RewriteRule ^categories\/edit\/form\/([1-9][0-9]*)$ index.php?categories=editForm&id=$1 [L]
+
+  # MODIFICATION D'UNE CATEGORIE : UPDATE
+  # PATTERN: categories/edit/x
+  # VERS: index.php?categories=edit&id=x
+  RewriteRule ^categories\/edit\/([1-9][0-9]*)$ index.php?categories=edit&id=$1 [L]
+
+# -------------------------------
+# ROUTES DU USER
+# -------------------------------
   # DECONNEXION DU USER
   # PATTERN: user/logout
   # VERS: index.php?user=logout
-  RewriteRule ^user\/logout$ index.php?user=logout [L]
+     RewriteRule ^user\/logout$ index.php?user=logout [L]
 
 # --------------------------------------------------
 RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
