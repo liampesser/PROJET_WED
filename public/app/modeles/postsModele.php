@@ -7,10 +7,10 @@ namespace App\Modeles\PostsModele;
 
 /**
  * [findAll description]
- * @param  PDO   $connexion [description]
- * @return array            [description]
+ * @param  PDO    $connexion [description]
+ * @param  array  $params    [description]
+ * @return [type]            [description]
  */
-
 function findAll (\PDO $connexion, array $params = []) {
   $params_default = [
     'orderBy'   => 'id',
@@ -36,17 +36,19 @@ function findAll (\PDO $connexion, array $params = []) {
   return $rs->fetchAll(\PDO::FETCH_ASSOC);
 }
 
+// ---------------------------------------------------------------------------------
+
 /**
  * [findOneById description]
  * @param  PDO   $connexion [description]
  * @param  int   $id        [description]
  * @return array            [description]
  */
-
 function findOneById (\PDO $connexion, int $id) :array {
   $sql = "SELECT *
           FROM posts
-          WHERE id = :id;";
+          JOIN authors ON author_id = authors.id
+          WHERE posts.id = :id;";
   $rs = $connexion->prepare($sql);
   $rs->bindValue(':id', $id, \PDO::PARAM_INT);
   $rs->execute();

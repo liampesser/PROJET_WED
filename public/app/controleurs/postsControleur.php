@@ -30,9 +30,7 @@ function showAction(\PDO $connexion, int $id) {
     include_once '../app/modeles/postsModele.php';
     $post = PostsModele\findOneById($connexion, $id);
 
-  // Je mets dans $post les infos de l'auteur que je demande au modèle
-    include_once '../app/modeles/authorsModele.php';
-    $author = \App\Modeles\AuthorsModele\findOneById($connexion, $post['author_id']);
+  
 
   // Je charge la vue show dans $content
     GLOBAL $content, $title;

@@ -19,5 +19,15 @@
        </div>
     </div>
   <!-- AUTHOR DETAILS -->
-  <?php include '../app/vues/authors/show.php'; ?>
+    <div class="blog-author">
+     <div class="media align-items-center">
+        <img src='assets/img/blog/<?php echo $post['avatar']; ?>' alt="">
+        <div class="media-body">
+           <a href="#">
+              <h4><?php echo $post['firstname']; ?> <?php echo $post['lastname']; ?></h4>
+           </a>
+           <p><?php echo $post['biography']; ?></p>
+        </div>
+     </div>
+   </div>
  </div>
