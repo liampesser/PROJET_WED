@@ -4,7 +4,7 @@
  */
 ?>
 
-<h1>Ajout d'une catégorie</h1>
+<h1><?php echo TITRE_CATEGORIES_ADDFORM; ?></h1>
 <div>
   <a href="categories">Retour vers la liste des catégories</a>
 </div>

@@ -12,14 +12,14 @@ use \App\Modeles\PostsModele;
  * @param  PDO    $connexion [description]
  * @return [type]            [description]
  */
-function indexAction(\PDO $connexion) {
+function indexAction(\PDO $connexion, array $params = []) {
   // Je mets dans $posts la liste des 10 derniers posts que je demande au modèle
     include_once '../app/modeles/postsModele.php';
-    $posts = PostsModele\findAll($connexion);
+    $posts = PostsModele\findAll($connexion, $params);
 
   // Je charge la vue posts/index dans $content
     GLOBAL $title, $content;
-    $title = "Blog";
+    $title = TITRE_POSTS_INDEX;
     ob_start();
       include '../app/vues/posts/index.php';
     $content = ob_get_clean();

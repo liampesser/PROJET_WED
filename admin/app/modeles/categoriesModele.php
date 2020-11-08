@@ -24,7 +24,8 @@ function findAll(\PDO $connexion) {
 
 function insert(\PDO $connexion, array $data = null) {
   $sql = "INSERT INTO categories
-          SET name = :name;";
+          SET name = :name,
+          created_at = NOW;";
   $rs = $connexion->prepare($sql);
   $rs->bindValue(':name', $data['name'], \PDO::PARAM_STR);
   $rs->execute();

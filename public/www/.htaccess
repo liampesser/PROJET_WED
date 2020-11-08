@@ -9,8 +9,13 @@ Options +FollowSymlinks
 RewriteEngine on
 
 #---------------------------------------------------
-#ROUTES
+#Règles de réécriture d'URL :
 #---------------------------------------------------
+
+  #DETAILS D'UNE CATEGORIE
+  #PATTERN: categories/{id}/{slug}
+  #VERS: index.php?categorieID=x
+  RewriteRule ^categories\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*)$ index.php?categorieID=$1 [L]
 
   #DETAILS D'UN POST
   #PATTERN: posts/{id}/{slug}
